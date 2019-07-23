@@ -11,6 +11,7 @@ time_at_start = time.time()
 
 # the path where the raspberry pi will store its file
 RASPI_PATH = f"/home/pi/{time_at_start}/"
+os.makedirs(RASPI_PATH)
 
 # seconds between captures
 INTERVAL = 1
@@ -18,10 +19,9 @@ INTERVAL = 1
 SESSION_LENGTH = 60
 
 with PiCamera() as camera:
-    try:
-        for filename in camera.capture_continuous(RASPI_PATH + 'image{timestamp}.png'):
-            time.sleep(INTERVAL)
+    for filename in camera.capture_continuous(RASPI_PATH + 'image{timestamp}.png'):
+        time.sleep(INTERVAL)
 
-            # time.time() is time at this point of the script
-            if time.time() - time_at_start >= SESSION_LENGTH:
-                break
+        # time.time() is time at this point of the script
+        if time.time() - time_at_start >= SESSION_LENGTH:
+            break
