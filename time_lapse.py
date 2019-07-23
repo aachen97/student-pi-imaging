@@ -10,12 +10,12 @@ import time
 time_at_start = time.time()
 
 # the path where the raspberry pi will store its file
-RASPI_PATH = f"/home/raspberrypi/{time_at_start}/"
+RASPI_PATH = f"/home/pi/{time_at_start}/"
 
 # seconds between captures
 INTERVAL = 1
 # seconds in the air
-SESSION_LENGTH = 300
+SESSION_LENGTH = 60
 
 with PiCamera() as camera:
     # preview on pi screen
