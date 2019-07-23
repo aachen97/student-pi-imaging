@@ -18,9 +18,6 @@ INTERVAL = 1
 SESSION_LENGTH = 60
 
 with PiCamera() as camera:
-    # preview on pi screen
-    camera.start_preview()
-
     try:
         for filename in camera.capture_continuous(RASPI_PATH + 'image{timestamp}.png'):
             time.sleep(INTERVAL)
@@ -28,5 +25,3 @@ with PiCamera() as camera:
             # time.time() is time at this point of the script
             if time.time() - time_at_start >= SESSION_LENGTH:
                 break
-    finally:
-        camera.stop_preview()
