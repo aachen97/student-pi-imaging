@@ -1,7 +1,4 @@
 import os
-import datetime
-from datetime import tzinfo
-import math
 from picamera import PiCamera
 from time import sleep
 import time
