@@ -13,7 +13,7 @@ os.makedirs(RASPI_PATH)
 # seconds between captures
 INTERVAL = 1
 # seconds in the air
-SESSION_LENGTH = 300
+SESSION_LENGTH = 60
 
 with PiCamera() as camera:
     for filename in camera.capture_continuous(RASPI_PATH + 'image{counter}.tiff'):
