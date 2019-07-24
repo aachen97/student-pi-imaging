@@ -16,7 +16,7 @@ INTERVAL = 1
 SESSION_LENGTH = 300
 
 with PiCamera() as camera:
-    for filename in camera.capture_continuous(RASPI_PATH + 'image{counter}.png'):
+    for filename in camera.capture_continuous(RASPI_PATH + 'image{counter}.tiff'):
         time.sleep(INTERVAL)
 
         # time.time() is time at this point of the script
