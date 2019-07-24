@@ -10,7 +10,7 @@ import time
 time_at_start = time.time()
 
 # the path where the raspberry pi will store its file
-RASPI_PATH = f"/home/pi/{time_at_start}/"
+RASPI_PATH = "/home/pi/{}/".format(time_at_start)
 os.makedirs(RASPI_PATH)
 
 # seconds between captures
