@@ -18,7 +18,7 @@ SESSION_LENGTH = 10
 with PiCamera() as camera:
     for file_type in ['yuv', 'bgr', 'bgra', 'bmp']:
         try:
-            for filename in camera.capture_continuous(RASPI_PATH + 'image{counter}.{}'.format(file_type):
+            for filename in camera.capture_continuous(RASPI_PATH + 'image{counter}.{}'.format(file_type)):
                 time.sleep(INTERVAL)
 
                 # time.time() is time at this point of the script
