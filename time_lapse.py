@@ -16,9 +16,11 @@ INTERVAL = 1
 SESSION_LENGTH = 10
 
 with PiCamera() as camera:
-    for filename in camera.capture_continuous(RASPI_PATH + 'image{counter}.yuv'):
-        time.sleep(INTERVAL)
+    for file_type in ['yuv', 'bgr', 'bgra', 'bmp']:
+        try:
+            for filename in camera.capture_continuous(RASPI_PATH + 'image{counter}.{}'.format(file_type):
+                time.sleep(INTERVAL)
 
-        # time.time() is time at this point of the script
-        if time.time() - time_at_start >= SESSION_LENGTH:
-            break
+                # time.time() is time at this point of the script
+                if time.time() - time_at_start >= SESSION_LENGTH:
+                    break
