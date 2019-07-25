@@ -24,3 +24,5 @@ with PiCamera() as camera:
                 # time.time() is time at this point of the script
                 if time.time() - time_at_start >= SESSION_LENGTH:
                     break
+        except:
+            pass
