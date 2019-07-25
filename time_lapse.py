@@ -13,10 +13,10 @@ os.makedirs(RASPI_PATH)
 # seconds between captures
 INTERVAL = 1
 # seconds in the air
-SESSION_LENGTH = 60
+SESSION_LENGTH = 10
 
 with PiCamera() as camera:
-    for filename in camera.capture_continuous(RASPI_PATH + 'image{counter}.bmp'):
+    for filename in camera.capture_continuous(RASPI_PATH + 'image{counter}.bgr'):
         time.sleep(INTERVAL)
 
         # time.time() is time at this point of the script
